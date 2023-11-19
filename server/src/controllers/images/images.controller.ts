@@ -35,7 +35,7 @@ export class ImageController {
  public static async getLatestImages(req: Request, res: Response) {
   try {
    const images = await axios.get(
-    `https://pixabay.com/api/?key=${process.env.PIXABAY_API_KEY}&q=latest&per_page=9`
+    `https://pixabay.com/api/?key=${process.env.PIXABAY_API_KEY}&order=latest&per_page=9`
    );
    return res.send(images.data.hits);
   } catch (error) {
